@@ -31,21 +31,50 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
 
 
-    <body onload="app.cargarAll()">
+    <body onload="app.cargarAll">
         <div class="container">
             <h2>COVID2019 CORONAVIRUS</h2>
-
-            <table class="table table-striped">
-                <thread class="thead-dark">
-                    <tr>
-                        <th scope="col">Country </th>
-                        <th scope="col">num Deadths</th>
-                        <th scope="col">Num Infected</th>
-                    </tr>
-                </thread>
-                <tbody id ="filasPaises"></tbody>
-            </table>
-            <div id="map"></div>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar ">
+                <table class="table table-bordered table-striped mb-0" >
+                    <thread class="thead-dark">
+                        <tr>
+                            <th scope="col">Country </th>
+                            <th scope="col">num Deadths</th>
+                            <th scope="col">Num Infected</th>
+                            <th scope="col">Num Cured</th>
+                        </tr>
+                    </thread>
+                    <tbody id ="filasPaises"></tbody>
+                </table>
+            </div>
+            <h2 id="countryname" style="text-align: center"></h2>
+            <div id="tabla2" style="display: none" >
+                <div class="col">
+                    <table class="table table-striped" >
+                        <thread class="thead-dark">
+                            <tr>
+                                <th scope="col">Name </th>
+                                <th scope="col">Birth Date</th>
+                            </tr>
+                        </thread>
+                        <tbody id ="info"></tbody>
+                    </table>
+                </div>
+                <div id="map" class="col"></div>
+            </div>
+            <div class="table-wrapper-scroll-y my-custom-scrollbar" id="tabla3" style="display: none">
+                <table class="table table-bordered table-striped mb-0" >
+                    <thread class="thead-dark">
+                        <tr>
+                            <th scope="col">Region </th>
+                            <th scope="col">Num Deadths</th>
+                            <th scope="col">Num Infected</th>
+                            <th scope="col">Num Cured</th>
+                        </tr>
+                    </thread>
+                    <tbody id ="filasProvicias"></tbody>
+                </table>
+            </div>
         </div>
     </body>
 </html>

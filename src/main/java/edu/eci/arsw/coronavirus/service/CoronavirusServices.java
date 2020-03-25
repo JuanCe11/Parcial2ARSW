@@ -23,10 +23,11 @@ public class CoronavirusServices {
     public JsonNode coronavirusByName(String name) throws CoronavirtusException {
         JsonNode res = cache.getByName(name);
         if(res != null){
+            System.out.println(res.toString());
             return res;
         }else{
             JsonNode response = http.coronavirtusByName(name);
-            //cache.addCoronavirus(response);
+            cache.addByName(name,response);
             return response;
         }
     }
