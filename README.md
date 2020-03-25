@@ -1,5 +1,9 @@
 # Escuela Colombiana de Ingeniería Julio Garavito - Arquitecturas de Software ARSW - Parcial Segundo Tercio
 
+## Juan Sebastian Gómez López
+[HEROKU APP](https://juan-gomez-arsw-t2.herokuapp.com/)
+[REPO LINK](https://github.com/JuanCe11/Parcial2ARSW.git)
+
 ## Preparación para el Parcial
 
 Con el objetivo de preparar el examen final del segundo tercio, por favor siga las siguientes instrucciones.
