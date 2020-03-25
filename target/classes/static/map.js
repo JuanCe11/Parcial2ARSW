@@ -33,19 +33,19 @@ function plotMarkers(m)
 {
     markers = [];
     bounds = new google.maps.LatLngBounds();
+    console.log(m);
 
-    m.forEach(function (marker) {
-        var position = new google.maps.LatLng(marker.location.latitude, marker.location.longitude);
+    var position = new google.maps.LatLng(m[0], m[1]);
+    markers.push(
+        new google.maps.Marker({
+            position: position,
+            map: map,
+            animation: google.maps.Animation.DROP
+        })
+    );
 
-        markers.push(
-            new google.maps.Marker({
-                position: position,
-                map: map,
-                animation: google.maps.Animation.DROP
-            })
-        );
+    bounds.extend(position);
 
-        bounds.extend(position);
-    });
     map.fitBounds(bounds);
+    map.setZoom(5);
 }

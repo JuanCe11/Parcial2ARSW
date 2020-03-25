@@ -15,7 +15,24 @@ var app = (function () {
         $("#info").append(row);
         row = "<tr> <td> Num Cured</td> <td>"+recovered+"</td> </tr>";
         $("#info").append(row);
+        mapaPais(name);
         getCovidByName(name);
+    }
+
+    function mapaPais(name){
+        var url = window.location;
+        var nueva = url.protocol+"//"+url.host + "/coronavirus/cords/"+name;
+        var getPromise = $.get(nueva);
+        getPromise.then(
+            function(data){
+                var info = JSON.parse(data);
+                plotMarkers(info[0].latlng);
+            },
+            function(){
+                console.log('error')
+            }
+        );
+        return getPromise;
     }
 
     function _tableProv(data){
@@ -58,7 +75,6 @@ var app = (function () {
         var getPromise = $.get(nueva);
         getPromise.then(
             function(data){
-                console.log(JSON.parse(data));
                 callback(JSON.parse(data));
             },
             function(){

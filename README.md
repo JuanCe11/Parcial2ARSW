@@ -31,6 +31,7 @@ Una vez tenga la funcionalidad básica, extienda su implementación para incluir
 
 Como el API del coronavirus no brinda información sobre la latitud y longitud del país consultado, apoyese en este [API](https://rapidapi.com/apilayernet/api/rest-countries-v1?endpoint=53aa5a09e4b051a76d24136a). AJUSTE LOS DIAGRAMAS DE ARQUITECTURA QUE SEAN NECESARIOS PARA REFLEJAR EL USO DE ESTE COMPONENTE.
 
+
 ![](ArchitectureDiagrams/moq-2.png)
 
 Sugerencia realice la implementación de manera incremental. Haga commits regulares.

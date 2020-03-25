@@ -4,13 +4,9 @@ import com.mashape.unirest.http.JsonNode;
 
 import edu.eci.arsw.coronavirus.cache.CoronavirusCache;
 import edu.eci.arsw.coronavirus.connection.HttpConnectionService;
-import edu.eci.arsw.coronavirus.controller.CoronavirtusException;
-import org.json.JSONObject;
+import edu.eci.arsw.coronavirus.controller.CoronavirusException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service("airportFinder")
 public class CoronavirusServices {
@@ -20,10 +16,9 @@ public class CoronavirusServices {
     @Autowired
     CoronavirusCache cache;
 
-    public JsonNode coronavirusByName(String name) throws CoronavirtusException {
+    public JsonNode coronavirusByName(String name) throws CoronavirusException {
         JsonNode res = cache.getByName(name);
         if(res != null){
-            System.out.println(res.toString());
             return res;
         }else{
             JsonNode response = http.coronavirtusByName(name);
@@ -32,7 +27,7 @@ public class CoronavirusServices {
         }
     }
 
-    public JsonNode allCoronavirus() throws CoronavirtusException {
+    public JsonNode allCoronavirus() throws CoronavirusException {
         JsonNode res =  cache.getAll();
         if(res != null){
             return res;
@@ -42,6 +37,11 @@ public class CoronavirusServices {
             res =  cache.getAll();
             return res;
         }
+    }
+
+    public JsonNode getCoordenadasByName(String name) throws CoronavirusException {
+        JsonNode response = http.getCoords(name);
+        return response;
     }
 
 }
