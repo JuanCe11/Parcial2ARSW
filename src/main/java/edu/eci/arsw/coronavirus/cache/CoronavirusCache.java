@@ -71,7 +71,10 @@ public class CoronavirusCache {
                     suma = js.getInt("confirmed") + json.getInt("confirmed");
                     js.remove("confirmed");
                     js.put("confirmed", suma);
-                    suma = js.getInt("recovered") + json.getInt("recovered");
+                    System.out.println("Actual "+js);
+                    System.out.println("Iterator "+json);
+                    
+                    suma = js.optInt("recovered") + json.optInt("recovered");
                     js.remove("recovered");
                     js.put("recovered", suma);
                 }
